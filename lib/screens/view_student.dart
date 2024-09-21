@@ -21,10 +21,13 @@ class _ScreenViewStudentState extends State<ScreenViewStudent> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
         backgroundColor: Colors.yellow[300],
         title: Text(
           widget.name,
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),
         ),
         centerTitle: true,
       ),
@@ -35,6 +38,7 @@ class _ScreenViewStudentState extends State<ScreenViewStudent> {
             child: Column(
               children: [
                 CircleAvatar(
+                  backgroundColor: Colors.transparent,
                   radius: 120,
                   backgroundImage: widget.imagePath != null && widget.imagePath!.isNotEmpty ? FileImage(File(widget.imagePath!)) : AssetImage('assets/logo.png')
                 ),
@@ -55,6 +59,7 @@ class _ScreenViewStudentState extends State<ScreenViewStudent> {
                         overflow: TextOverflow.ellipsis,
                         "Name: ${widget.name}",
                         style: TextStyle(
+                          color: Colors.black,
                             fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
@@ -62,6 +67,7 @@ class _ScreenViewStudentState extends State<ScreenViewStudent> {
                         overflow: TextOverflow.ellipsis,
                         "Age: ${widget.age}",
                         style: TextStyle(
+                          color: Colors.black,
                             fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
@@ -69,6 +75,7 @@ class _ScreenViewStudentState extends State<ScreenViewStudent> {
                         overflow: TextOverflow.ellipsis,
                         "Class: ${widget.classs}",
                         style: TextStyle(
+                          color: Colors.black,
                             fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
@@ -76,6 +83,7 @@ class _ScreenViewStudentState extends State<ScreenViewStudent> {
                         overflow: TextOverflow.ellipsis,
                         "Gender: ${widget.gender}",
                         style: TextStyle(
+                          color: Colors.black,
                             fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                     ],

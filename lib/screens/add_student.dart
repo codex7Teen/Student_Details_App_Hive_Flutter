@@ -74,10 +74,13 @@ class _ScreenAddStudentState extends State<ScreenAddStudent> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
         backgroundColor: Colors.yellow[300],
         title: Text(
           widget.heading,
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
         ),
         centerTitle: true,
       ),
@@ -91,6 +94,7 @@ class _ScreenAddStudentState extends State<ScreenAddStudent> {
               child: Column(
                 children: [
                   CircleAvatar(
+                    backgroundColor: Colors.transparent,
                       radius: 50,
                       backgroundImage: imageFile != null
                           ? FileImage(imageFile!)
@@ -173,7 +177,7 @@ class _ScreenAddStudentState extends State<ScreenAddStudent> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: 35),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -187,12 +191,12 @@ class _ScreenAddStudentState extends State<ScreenAddStudent> {
                           });
                         },
                         child: Container(
-                          width: 90,
-                          height: 30,
+                          width: 95,
+                          height: 35,
                           decoration: BoxDecoration(
                               color: Colors.red[100],
                               borderRadius: BorderRadius.circular(20)),
-                          child: Center(child: Text('Clear Data')),
+                          child: Center(child: Text('Clear Data', style: TextStyle(color: Colors.black),)),
                         ),
                       ),
                       SizedBox(
@@ -244,7 +248,7 @@ class _ScreenAddStudentState extends State<ScreenAddStudent> {
                           decoration: BoxDecoration(
                               color: Colors.green[100],
                               borderRadius: BorderRadius.circular(20)),
-                          child: Center(child: Text(widget.addOrUpdate)),
+                          child: Center(child: Text(widget.addOrUpdate, style: TextStyle(color: Colors.black))),
                         ),
                       )
                     ],

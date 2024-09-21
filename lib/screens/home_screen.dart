@@ -15,6 +15,8 @@ class ScreenHome extends StatefulWidget {
   State<ScreenHome> createState() => _ScreenHomeState();
 }
 
+bool changeIcon = true;
+
 class _ScreenHomeState extends State<ScreenHome> {
 
   @override
@@ -28,7 +30,7 @@ class _ScreenHomeState extends State<ScreenHome> {
     return Scaffold(
         floatingActionButton: FloatingActionButton(
             backgroundColor: Colors.yellow,
-            child: Icon(Icons.add),
+            child: Icon(Icons.add, color: Colors.black),
             onPressed: () {
               Get.to(ScreenAddStudent(
                 addOrUpdate: 'Add Student',
@@ -36,10 +38,21 @@ class _ScreenHomeState extends State<ScreenHome> {
               ));
             }),
         appBar: AppBar(
+          iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
+          leading: InkWell(
+            onTap: () {
+              setState(() {
+                changeIcon = !changeIcon;
+              });
+              changeIcon ? Get.changeTheme(ThemeData.light()) : Get.changeTheme(ThemeData.dark());
+            },
+            child: changeIcon ? Icon(Icons.dark_mode_outlined, color: Colors.black,) :  Icon(Icons.light_mode_rounded,color: Colors.black)),
           backgroundColor: Colors.yellow[300],
           title: Text(
             'Student Details',
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
           ),
           centerTitle: true,
           actions: [
@@ -47,7 +60,7 @@ class _ScreenHomeState extends State<ScreenHome> {
               padding: const EdgeInsets.only(right: 15),
               child: InkWell(
                 onTap: () => Get.to(ScreenSearch()),
-                child: Icon(Icons.search)),
+                child: Icon(Icons.search,color: Colors.black)),
             )
           ],
         ),

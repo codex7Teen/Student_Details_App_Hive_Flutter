@@ -35,10 +35,13 @@ class _ScreenSearchState extends State<ScreenSearch> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
           backgroundColor: Colors.yellow[300],
           title: Text(
             'Serach Students',
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
           ),
           centerTitle: true,
           actions: [

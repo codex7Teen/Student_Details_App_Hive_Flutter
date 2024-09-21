@@ -29,21 +29,22 @@ class StudentListWidget extends StatelessWidget {
               leading: imagePath != null && imagePath!.isNotEmpty ? CircleAvatar(
                 backgroundImage: FileImage(File(imagePath!)) ,
               ) : CircleAvatar(
+                backgroundColor: Colors.transparent,
                 backgroundImage: AssetImage('assets/logo.png')
               ),
-              title: Text(name, overflow: TextOverflow.ellipsis,),
-              subtitle: Text(gender, overflow: TextOverflow.ellipsis,),
+              title: Text(name, overflow: TextOverflow.ellipsis, style: TextStyle(color: Colors.black),),
+              subtitle: Text(gender, overflow: TextOverflow.ellipsis, style: TextStyle(color: Colors.black),),
               trailing: SizedBox(
                 width: 100,
                 child: Row(
                   children: [
                     IconButton(onPressed: () {
                       Get.to(ScreenAddStudent(heading: 'Update Student Details', addOrUpdate: 'Update student', name: name, classs: classs, age: age, gender: gender, studentId: id, imagePath: imagePath,));
-                    }, icon: Icon(Icons.create)),
+                    }, icon: Icon(Icons.create,color: Colors.black)),
                     IconButton(onPressed: () async {
                       //delete
                       await StudentDbFunctions.deleteStudent(id);
-                    }, icon: Icon(Icons.delete))
+                    }, icon: Icon(Icons.delete,color: Colors.black))
                   ],
                 ),
               ),
